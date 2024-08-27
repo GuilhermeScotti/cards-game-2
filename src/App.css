@@ -5,68 +5,49 @@
   text-align: center;
 }
 
-.logo {
-  height: 12em;
-  padding: 3em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.flip-container {
+  perspective: 1000px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.container { 
-  text-align: center;
-  justify-content: center;
+.flipper {
+  height: 15em;
+  width: 35em;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  border: solid 1px #245826a7;
   display: flex;
-  flex-direction: row;
-  gap: 4em;
+  justify-content: center;
+  align-items: center; 
 }
 
-.item {
-    text-align: center;
-    align-content: center;
-    border: 1px solid #646cffaa; 
-    border-radius: 5px;
-    padding: 2em 3em;
+.flipped{
+  transform: rotateY(180deg);
 }
 
-.selector{
-  height: 12em;
-  padding: 3em;
-  transition: filter 300ms;
+.flipper .back {
+  transform: rotateY(180deg);
+  position: absolute;
+  backface-visibility: hidden;
 }
 
-.selector:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.cardImage {
+  max-width: 10em;
+  max-height: 5em;
 }
 
-.selector:active {
-  transform: scale(0.9);
+.flipper .front {
+  backface-visibility: hidden;
 }
+
+.easy{
+  background-color: #17651aae ;
+}
+
+.medium{
+  background-color: #d3c22cad;
+}
+
+.hard{
+  background-color: #e83d3dad;
+}
+
